@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Contagem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h2>Sistema de Contagem</h2>
+
+  <div id="menuInicial">
+    <button onclick="abrirAreaFuncionario()">Área do Funcionário</button>
+    <button onclick="abrirMenuGerente()">Área Gerencial</button>
+  </div>
+
+  <div id="formularioInicial" class="hidden">
+    <h3>Contagem Diária</h3>
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <input type="date" id="data" required>
+    <button onclick="iniciarContagem()">Continuar</button>
+    <button onclick="voltarMenu()">Voltar</button>
+  </div>
+
+  <div id="telaContagem" class="hidden">
+    <h3>Lista de Itens</h3>
+    <div id="listaItens"></div>
+    <button onclick="salvarContagem()">Salvar Contagem</button>
+    <button onclick="voltarMenu()">Voltar</button>
+  </div>
+
+  <div id="menuGerente" class="hidden">
+    <h3>Área Gerencial</h3>
+    <button onclick="abrirGerenciarItens()">Gerenciar Itens do Estoque</button>
+    <button onclick="abrirDadosContagem()">Dados de Contagem</button>
+    <button onclick="voltarMenu()">Voltar</button>
+  </div>
+
+  <div id="gerenciarItens" class="hidden">
+    <h3>Gerenciar Itens</h3>
+    <input type="text" id="novoItem" placeholder="Nome do item">
+    <select id="novaCategoria"></select>
+    <input type="text" id="novaCategoriaPersonalizada" placeholder="Ou digite nova categoria">
+    <button onclick="adicionarItemGerente()">Adicionar Item</button>
+    <button onclick="voltarGerente()">Voltar</button>
+
+    <h4>Itens Atuais:</h4>
+    <ul id="listaGerente"></ul>
+  </div>
+
+  <div id="dadosContagem" class="hidden">
+    <h3>Histórico de Contagens</h3>
+    <table id="tabelaHistorico" border="1" cellspacing="0" cellpadding="5"></table>
+    <canvas id="grafico" width="400" height="200"></canvas>
+    <button onclick="voltarGerente()">Voltar</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
